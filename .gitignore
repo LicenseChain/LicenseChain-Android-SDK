@@ -15,7 +15,6 @@
 .cxx
 local.properties
 # Allow AAR files for releases
-!app/build/outputs/aar/*.aar
 !releases/*.aar
 
 # Android Studio
@@ -33,9 +32,6 @@ build/
 !gradle/wrapper/gradle-wrapper.jar
 !**/src/main/**/build/
 !**/src/test/**/build/
-# Allow AAR files in releases directory
-!releases/*.aar
-!app/build/outputs/aar/*.aar
 
 # IntelliJ
 *.iml

@@ -38,7 +38,7 @@ class AdvancedFeaturesActivity : AppCompatActivity() {
             .apiKey("your-api-key-here")
             .appName("MyAdvancedAndroidApp")
             .version("1.0.0")
-            .baseUrl("https://api.licensechain.com")
+            .baseUrl("https://api.licensechain.app")
             .timeout(30)
             .retries(3)
             .debug(true)

@@ -205,7 +205,7 @@ val config = LicenseChainConfig.Builder()
     .apiKey("your-api-key")
     .appName("your-app-name")
     .version("1.0.0")
-    .baseUrl("https://api.licensechain.com") // Optional
+    .baseUrl("https://api.licensechain.app") // Optional
     .build()
     
 val client = LicenseChainClient(config)
@@ -344,7 +344,7 @@ val config = LicenseChainConfig.Builder()
     .apiKey("your-api-key")
     .appName("your-app-name")
     .version("1.0.0")
-    .baseUrl("https://api.licensechain.com")
+    .baseUrl("https://api.licensechain.app")
     .timeout(30)        // Request timeout in seconds
     .retries(3)         // Number of retry attempts
     .debug(false)       // Enable debug logging
@@ -502,10 +502,10 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 ## 🆘 Support
 
-- **Documentation**: [https://docs.licensechain.com/android](https://docs.licensechain.com/android)
+- **Documentation**: [https://docs.licensechain.app/android](https://docs.licensechain.app/android)
 - **Issues**: [GitHub Issues](https://github.com/LicenseChain/LicenseChain-Android-SDK/issues)
 - **Discord**: [LicenseChain Discord](https://discord.gg/licensechain)
-- **Email**: support@licensechain.com
+- **Email**: support@licensechain.app
 
 ## 🔗 Related Projects
 

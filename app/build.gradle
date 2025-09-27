@@ -82,7 +82,7 @@ publishing {
                     developer {
                         id = 'licensechain'
                         name = 'LicenseChain Team'
-                        email = 'support@licensechain.com'
+                        email = 'support@licensechain.app'
                     }
                 }
             }

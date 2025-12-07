@@ -1,4 +1,4 @@
-# LicenseChain Android SDK
+﻿# LicenseChain Android SDK
 
 [![License](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE)
 [![Android](https://img.shields.io/badge/Android-API%2021+-green.svg)](https://developer.android.com/)
@@ -7,18 +7,18 @@
 
 Official Android SDK for LicenseChain - Secure license management for Android applications.
 
-## 🚀 Features
+## ðŸš€ Features
 
-- **🔐 Secure Authentication** - User registration, login, and session management
-- **📜 License Management** - Create, validate, update, and revoke licenses
-- **🛡️ Hardware ID Validation** - Prevent license sharing and unauthorized access
-- **🔔 Webhook Support** - Real-time license events and notifications
-- **📊 Analytics Integration** - Track license usage and performance metrics
-- **⚡ High Performance** - Optimized for Android's runtime
-- **🔄 Async Operations** - Non-blocking HTTP requests and data processing
-- **🛠️ Easy Integration** - Simple API with comprehensive documentation
+- **ðŸ” Secure Authentication** - User registration, login, and session management
+- **ðŸ“œ License Management** - Create, validate, update, and revoke licenses
+- **ðŸ›¡ï¸ Hardware ID Validation** - Prevent license sharing and unauthorized access
+- **ðŸ”” Webhook Support** - Real-time license events and notifications
+- **ðŸ“Š Analytics Integration** - Track license usage and performance metrics
+- **âš¡ High Performance** - Optimized for Android's runtime
+- **ðŸ”„ Async Operations** - Non-blocking HTTP requests and data processing
+- **ðŸ› ï¸ Easy Integration** - Simple API with comprehensive documentation
 
-## 📦 Installation
+## ðŸ“¦ Installation
 
 ### Method 1: Gradle (Recommended)
 
@@ -54,7 +54,7 @@ dependencies {
 }
 ```
 
-## 🚀 Quick Start
+## ðŸš€ Quick Start
 
 ### Basic Setup
 
@@ -194,7 +194,7 @@ lifecycleScope.launch {
 }
 ```
 
-## 📚 API Reference
+## ðŸ“š API Reference
 
 ### LicenseChainClient
 
@@ -300,7 +300,7 @@ suspend fun trackEvent(eventName: String, properties: Map<String, Any>)
 suspend fun getAnalytics(timeRange: String): Analytics
 ```
 
-## 🔧 Configuration
+## ðŸ”§ Configuration
 
 ### Android Manifest
 
@@ -352,7 +352,7 @@ val config = LicenseChainConfig.Builder()
     .build()
 ```
 
-## 🛡️ Security Features
+## ðŸ›¡ï¸ Security Features
 
 ### Hardware ID Protection
 
@@ -380,7 +380,7 @@ val isValid = licenseClient.validateHardwareId(licenseKey, hardwareId)
 - Expiration checking
 - Feature-based access control
 
-## 📊 Analytics and Monitoring
+## ðŸ“Š Analytics and Monitoring
 
 ### Event Tracking
 
@@ -418,7 +418,7 @@ lifecycleScope.launch {
 }
 ```
 
-## 🔄 Error Handling
+## ðŸ”„ Error Handling
 
 ### Custom Exception Types
 
@@ -449,7 +449,7 @@ val config = LicenseChainConfig.Builder()
     .build()
 ```
 
-## 🧪 Testing
+## ðŸ§ª Testing
 
 ### Unit Tests
 
@@ -476,7 +476,7 @@ fun testIntegration() = runTest {
 }
 ```
 
-## 📝 Examples
+## ðŸ“ Examples
 
 See the `examples/` directory for complete examples:
 
@@ -484,7 +484,7 @@ See the `examples/` directory for complete examples:
 - `AdvancedFeaturesActivity.kt` - Advanced features and configuration
 - `WebhookIntegrationActivity.kt` - Webhook handling
 
-## 🤝 Contributing
+## ðŸ¤ Contributing
 
 We welcome contributions! Please see our [Contributing Guide](CONTRIBUTING.md) for details.
 
@@ -496,18 +496,18 @@ We welcome contributions! Please see our [Contributing Guide](CONTRIBUTING.md) f
 4. Build: `./gradlew build`
 5. Test: `./gradlew test`
 
-## 📄 License
+## ðŸ“„ License
 
 This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
 
-## 🆘 Support
+## ðŸ†˜ Support
 
 - **Documentation**: [https://docs.licensechain.app/android](https://docs.licensechain.app/android)
 - **Issues**: [GitHub Issues](https://github.com/LicenseChain/LicenseChain-Android-SDK/issues)
 - **Discord**: [LicenseChain Discord](https://discord.gg/licensechain)
 - **Email**: support@licensechain.app
 
-## 🔗 Related Projects
+## ðŸ”— Related Projects
 
 - [LicenseChain iOS SDK](https://github.com/LicenseChain/LicenseChain-iOS-SDK)
 - [LicenseChain Unity SDK](https://github.com/LicenseChain/LicenseChain-Unity-SDK)
@@ -515,4 +515,13 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 ---
 
-**Made with ❤️ for the Android community**
+**Made with â¤ï¸ for the Android community**
+
+
+## API Endpoints
+
+All endpoints automatically use the /v1 prefix when connecting to https://api.licensechain.app.
+
+### Base URL
+- **Production**: https://api.licensechain.app/v1\n- **Development**: https://api.licensechain.app/v1\n\n### Available Endpoints\n\n| Method | Endpoint | Description |\n|--------|----------|-------------|\n| GET | /v1/health | Health check |\n| POST | /v1/auth/login | User login |\n| POST | /v1/auth/register | User registration |\n| GET | /v1/apps | List applications |\n| POST | /v1/apps | Create application |\n| GET | /v1/licenses | List licenses |\n| POST | /v1/licenses/verify | Verify license |\n| GET | /v1/webhooks | List webhooks |\n| POST | /v1/webhooks | Create webhook |\n| GET | /v1/analytics | Get analytics |\n\n**Note**: The SDK automatically prepends /v1 to all endpoints, so you only need to specify the path (e.g., /auth/login instead of /v1/auth/login).
+

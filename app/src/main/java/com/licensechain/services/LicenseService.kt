@@ -157,12 +157,13 @@ class LicenseService(
     suspend fun validateLicense(licenseKey: String): Boolean = withContext(Dispatchers.IO) {
         Utils.validateNotEmpty(licenseKey, "licenseKey")
         
-        val request = mapOf("license_key" to licenseKey)
+        // Use /licenses/verify endpoint with 'key' parameter to match API
+        val request = mapOf("key" to licenseKey)
         val json = gson.toJson(request)
         val requestBody = json.toRequestBody("application/json".toMediaType())
         
         val httpRequest = Request.Builder()
-            .url("$baseUrl/licenses/validate")
+            .url("$baseUrl/licenses/verify")
             .post(requestBody)
             .addHeader("Authorization", "Bearer $apiKey")
             .addHeader("Content-Type", "application/json")

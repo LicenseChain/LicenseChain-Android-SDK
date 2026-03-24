@@ -60,7 +60,9 @@ dependencies {
 publishing {
     publications {
         release(MavenPublication) {
-            from components.release
+            afterEvaluate {
+                from components.release
+            }
             
             groupId = 'com.licensechain'
             artifactId = 'licensechain-android-sdk'

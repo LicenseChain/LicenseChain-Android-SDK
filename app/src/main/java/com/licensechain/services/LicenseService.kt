@@ -50,8 +50,7 @@ class LicenseService(
             val responseBody = response.body?.string() ?: ""
             
             if (response.isSuccessful) {
-                val apiResponse = gson.fromJson(responseBody, ApiResponse::class.java)
-                return@withContext apiResponse.data
+                return@withContext gson.fromJson(responseBody, License::class.java)
             }
             
             throw LicenseChainException("Failed to create license: $responseBody")
@@ -76,8 +75,7 @@ class LicenseService(
             val responseBody = response.body?.string() ?: ""
             
             if (response.isSuccessful) {
-                val apiResponse = gson.fromJson(responseBody, ApiResponse::class.java)
-                return@withContext apiResponse.data
+                return@withContext gson.fromJson(responseBody, License::class.java)
             }
             
             if (response.code == 404) {
@@ -114,8 +112,7 @@ class LicenseService(
             val responseBody = response.body?.string() ?: ""
             
             if (response.isSuccessful) {
-                val apiResponse = gson.fromJson(responseBody, ApiResponse::class.java)
-                return@withContext apiResponse.data
+                return@withContext gson.fromJson(responseBody, License::class.java)
             }
             
             if (response.code == 404) {
@@ -228,8 +225,7 @@ class LicenseService(
             val responseBody = response.body?.string() ?: ""
             
             if (response.isSuccessful) {
-                val apiResponse = gson.fromJson(responseBody, ApiResponse::class.java)
-                return@withContext apiResponse.data
+                return@withContext gson.fromJson(responseBody, LicenseStats::class.java)
             }
             
             throw LicenseChainException("Failed to get license stats: $responseBody")
@@ -239,7 +235,6 @@ class LicenseService(
         }
     }
     
-    private data class ApiResponse<T>(val data: T)
     private data class ValidationResponse(val valid: Boolean)
 
     private fun defaultHwuid(): String {

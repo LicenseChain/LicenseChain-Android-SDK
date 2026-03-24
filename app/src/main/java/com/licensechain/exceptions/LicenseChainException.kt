@@ -1,9 +1,9 @@
 package com.licensechain.exceptions
 
-class LicenseChainException(
+open class LicenseChainException(
     message: String,
     val errorCode: String = "UNKNOWN_ERROR",
-    val statusCode: Int = 500,
+    var statusCode: Int = 500,
     cause: Throwable? = null
 ) : Exception(message, cause)
 

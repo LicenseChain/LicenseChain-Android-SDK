@@ -243,7 +243,7 @@ class LicenseService(
     private data class ValidationResponse(val valid: Boolean)
 
     private fun defaultHwuid(): String {
-        val raw = "${Build.BRAND}|${Build.MODEL}|${Build.DEVICE}|${Build.VERSION.SDK_INT}"
+        val raw = "licensechain|android|${Build.BRAND}|${Build.MODEL}|${Build.DEVICE}"
         return Utils.sha256(raw)
     }
 }

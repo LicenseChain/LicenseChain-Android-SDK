@@ -1,5 +1,6 @@
 package com.licensechain.services
 
+import android.os.Build
 import com.licensechain.exceptions.*
 import com.licensechain.models.*
 import com.licensechain.utils.Utils
@@ -21,6 +22,8 @@ class LicenseService(
         .writeTimeout(30, TimeUnit.SECONDS)
         .build()
 ) {
+    /** API base URL including /v1 for LicenseChain API compatibility. */
+    private val apiBase: String = baseUrl.trimEnd('/').let { if (it.endsWith("/v1")) it else "$it/v1" }
     
     private val gson = Gson()
     
@@ -36,7 +39,7 @@ class LicenseService(
         val requestBody = json.toRequestBody("application/json".toMediaType())
         
         val httpRequest = Request.Builder()
-            .url("$baseUrl/licenses")
+            .url("$apiBase/licenses")
             .post(requestBody)
             .addHeader("Authorization", "Bearer $apiKey")
             .addHeader("Content-Type", "application/json")
@@ -63,7 +66,7 @@ class LicenseService(
         Utils.validateUuid(licenseId)
         
         val httpRequest = Request.Builder()
-            .url("$baseUrl/licenses/$licenseId")
+            .url("$apiBase/licenses/$licenseId")
             .get()
             .addHeader("Authorization", "Bearer $apiKey")
             .build()
@@ -100,7 +103,7 @@ class LicenseService(
         val requestBody = json.toRequestBody("application/json".toMediaType())
         
         val httpRequest = Request.Builder()
-            .url("$baseUrl/licenses/$licenseId")
+            .url("$apiBase/licenses/$licenseId")
             .put(requestBody)
             .addHeader("Authorization", "Bearer $apiKey")
             .addHeader("Content-Type", "application/json")
@@ -131,7 +134,7 @@ class LicenseService(
         Utils.validateUuid(licenseId)
         
         val httpRequest = Request.Builder()
-            .url("$baseUrl/licenses/$licenseId")
+            .url("$apiBase/licenses/$licenseId")
             .delete()
             .addHeader("Authorization", "Bearer $apiKey")
             .build()
@@ -154,16 +157,17 @@ class LicenseService(
         }
     }
     
-    suspend fun validateLicense(licenseKey: String): Boolean = withContext(Dispatchers.IO) {
+    suspend fun validateLicense(licenseKey: String, hwuid: String? = null): Boolean = withContext(Dispatchers.IO) {
         Utils.validateNotEmpty(licenseKey, "licenseKey")
         
-        // Use /licenses/verify endpoint with 'key' parameter to match API
-        val request = mapOf("key" to licenseKey)
+        // Use /licenses/verify endpoint with key and optional hwuid (ecosystem HMAC/HWUID contract)
+        val request = mutableMapOf<String, String>("key" to licenseKey)
+        request["hwuid"] = if (!hwuid.isNullOrBlank()) hwuid else defaultHwuid()
         val json = gson.toJson(request)
         val requestBody = json.toRequestBody("application/json".toMediaType())
         
         val httpRequest = Request.Builder()
-            .url("$baseUrl/licenses/verify")
+            .url("$apiBase/licenses/verify")
             .post(requestBody)
             .addHeader("Authorization", "Bearer $apiKey")
             .addHeader("Content-Type", "application/json")
@@ -192,7 +196,7 @@ class LicenseService(
         val (validPage, validLimit) = Utils.validatePagination(page, limit)
         
         val httpRequest = Request.Builder()
-            .url("$baseUrl/licenses?user_id=$userId&page=$validPage&limit=$validLimit")
+            .url("$apiBase/licenses?user_id=$userId&page=$validPage&limit=$validLimit")
             .get()
             .addHeader("Authorization", "Bearer $apiKey")
             .build()
@@ -214,7 +218,7 @@ class LicenseService(
     
     suspend fun getLicenseStats(): LicenseStats = withContext(Dispatchers.IO) {
         val httpRequest = Request.Builder()
-            .url("$baseUrl/licenses/stats")
+            .url("$apiBase/licenses/stats")
             .get()
             .addHeader("Authorization", "Bearer $apiKey")
             .build()
@@ -237,4 +241,9 @@ class LicenseService(
     
     private data class ApiResponse<T>(val data: T)
     private data class ValidationResponse(val valid: Boolean)
+
+    private fun defaultHwuid(): String {
+        val raw = "${Build.BRAND}|${Build.MODEL}|${Build.DEVICE}|${Build.VERSION.SDK_INT}"
+        return Utils.sha256(raw)
+    }
 }

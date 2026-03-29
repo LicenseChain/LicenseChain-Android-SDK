@@ -5,6 +5,7 @@ import com.licensechain.exceptions.*
 import com.licensechain.models.*
 import com.licensechain.utils.Utils
 import com.google.gson.Gson
+import com.google.gson.JsonObject
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.withContext
 import okhttp3.*
@@ -185,7 +186,32 @@ class LicenseService(
             throw NetworkException("Network error occurred while validating license", e)
         }
     }
-    
+
+    suspend fun verifyLicenseWithDetails(licenseKey: String, hwuid: String? = null): JsonObject = withContext(Dispatchers.IO) {
+        Utils.validateNotEmpty(licenseKey, "licenseKey")
+        val request = mutableMapOf<String, String>("key" to licenseKey)
+        request["hwuid"] = if (!hwuid.isNullOrBlank()) hwuid else defaultHwuid()
+        val json = gson.toJson(request)
+        val requestBody = json.toRequestBody("application/json".toMediaType())
+        val httpRequest = Request.Builder()
+            .url("$apiBase/licenses/verify")
+            .post(requestBody)
+            .addHeader("Authorization", "Bearer $apiKey")
+            .addHeader("Content-Type", "application/json")
+            .build()
+        try {
+            val response = httpClient.newCall(httpRequest).execute()
+            val responseBody = response.body?.string() ?: ""
+            if (response.isSuccessful) {
+                return@withContext gson.fromJson(responseBody, JsonObject::class.java)
+            }
+            throw LicenseChainException("Failed to verify license: $responseBody")
+                .apply { statusCode = response.code }
+        } catch (e: IOException) {
+            throw NetworkException("Network error occurred while verifying license", e)
+        }
+    }
+
     suspend fun listUserLicenses(userId: String, page: Int = 1, limit: Int = 10): LicenseListResponse = withContext(Dispatchers.IO) {
         Utils.validateNotEmpty(userId, "userId")
         Utils.validateUuid(userId)

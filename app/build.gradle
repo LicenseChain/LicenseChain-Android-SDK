@@ -50,6 +50,10 @@ dependencies {
     
     // JSON
     implementation 'com.google.code.gson:gson:2.10.1'
+
+    // License JWT (RS256 + JWKS)
+    implementation 'com.auth0:java-jwt:4.4.0'
+    implementation 'com.auth0:jwks-rsa:0.22.1'
     
     // Testing
     testImplementation 'junit:junit:4.13.2'

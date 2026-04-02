@@ -483,6 +483,8 @@ See the `examples/` directory for complete examples:
 - `BasicUsageActivity.kt` - Basic SDK usage
 - `AdvancedFeaturesActivity.kt` - Advanced features and configuration
 - `WebhookIntegrationActivity.kt` - Webhook handling
+- [LICENSE_ASSERTION_JWKS.md](examples/LICENSE_ASSERTION_JWKS.md) — verify + RS256 `license_token` via JWKS
+- [JWKS_ONLY.md](examples/JWKS_ONLY.md) — token + JWKS URI only (`LICENSECHAIN_*` env parity; [JWKS_EXAMPLE_PRIORITY](https://github.com/LicenseChain/sdks/blob/main/docs/JWKS_EXAMPLE_PRIORITY.md))
 
 ## ðŸ¤ Contributing
 

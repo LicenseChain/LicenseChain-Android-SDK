@@ -1,5 +1,7 @@
 # License assertion JWT (RS256 + JWKS) — Android example
 
+**JWKS-only** (token + URI you already have, no `verify` in the same flow): [JWKS_ONLY.md](./JWKS_ONLY.md).
+
 When Core API has **`LICENSE_JWT_PRIVATE_KEY`** / **`LICENSE_JWT_PUBLIC_KEY`** configured, `POST /v1/licenses/verify` may return **`license_token`**, **`license_token_expires_at`**, and **`license_jwks_uri`**. Verify offline with **`LicenseAssertion.verifyLicenseAssertionJwt`** (same rules as other SDKs).
 
 Use your existing **`LicenseService`** (suspend) from a coroutine:

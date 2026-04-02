@@ -37,3 +37,5 @@ suspend fun verifyAndAssertJwt(
 ```
 
 Requirements: dependencies already pulled for **`LicenseAssertion`** (`java-jwt`, `jwks-rsa`). Use a **real** API key and license key from your Dashboard app.
+
+If you only need to verify an existing JWT + JWKS URL (no `verify` in the same flow), see **[JWKS_ONLY.md](./JWKS_ONLY.md)**.

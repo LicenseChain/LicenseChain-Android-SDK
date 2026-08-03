@@ -7,18 +7,18 @@
 
 Official Android SDK for LicenseChain - Secure license management for Android applications.
 
-## ðŸš€ Features
+## 🚀 Features
 
 - **ðŸ” Secure Authentication** - User registration, login, and session management
-- **ðŸ“œ License Management** - Create, validate, update, and revoke licenses
+- **📜 License Management** - Create, validate, update, and revoke licenses
 - **ðŸ›¡ï¸ Hardware ID Validation** - Prevent license sharing and unauthorized access
-- **ðŸ”” Webhook Support** - Real-time license events and notifications
-- **ðŸ“Š Analytics Integration** - Track license usage and performance metrics
+- **🔔 Webhook Support** - Real-time license events and notifications
+- **📊 Analytics Integration** - Track license usage and performance metrics
 - **âš¡ High Performance** - Optimized for Android's runtime
-- **ðŸ”„ Async Operations** - Non-blocking HTTP requests and data processing
+- **🔄 Async Operations** - Non-blocking HTTP requests and data processing
 - **ðŸ› ï¸ Easy Integration** - Simple API with comprehensive documentation
 
-## ðŸ“¦ Installation
+## 📦 Installation
 
 ### Method 1: Gradle (Recommended)
 
@@ -54,7 +54,7 @@ dependencies {
 }
 ```
 
-## ðŸš€ Quick Start
+## 🚀 Quick Start
 
 ### Basic Setup
 
@@ -194,7 +194,7 @@ lifecycleScope.launch {
 }
 ```
 
-## ðŸ“š API Reference
+## 📚 API Reference
 
 ### LicenseChainClient
 
@@ -300,7 +300,7 @@ suspend fun trackEvent(eventName: String, properties: Map<String, Any>)
 suspend fun getAnalytics(timeRange: String): Analytics
 ```
 
-## ðŸ”§ Configuration
+## 🔧 Configuration
 
 ### Android Manifest
 
@@ -380,7 +380,7 @@ val isValid = licenseClient.validateHardwareId(licenseKey, hardwareId)
 - Expiration checking
 - Feature-based access control
 
-## ðŸ“Š Analytics and Monitoring
+## 📊 Analytics and Monitoring
 
 ### Event Tracking
 
@@ -418,7 +418,7 @@ lifecycleScope.launch {
 }
 ```
 
-## ðŸ”„ Error Handling
+## 🔄 Error Handling
 
 ### Custom Exception Types
 
@@ -449,7 +449,7 @@ val config = LicenseChainConfig.Builder()
     .build()
 ```
 
-## ðŸ§ª Testing
+## 🧪 Testing
 
 ### Unit Tests
 
@@ -498,18 +498,18 @@ We welcome contributions! Please see our [Contributing Guide](CONTRIBUTING.md) f
 4. Build: `./gradlew build`
 5. Test: `./gradlew test`
 
-## ðŸ“„ License
+## 📄 License
 
 This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
 
-## ðŸ†˜ Support
+## 🆘 Support
 
 - **Documentation**: [https://docs.licensechain.app/android](https://docs.licensechain.app/android)
 - **Issues**: [GitHub Issues](https://github.com/LicenseChain/LicenseChain-Android-SDK/issues)
 - **Discord**: [LicenseChain Discord](https://discord.gg/licensechain)
 - **Email**: support@licensechain.app
 
-## ðŸ”— Related Projects
+## 🔗 Related Projects
 
 - [LicenseChain iOS SDK](https://github.com/LicenseChain/LicenseChain-iOS-SDK)
 - [LicenseChain Unity SDK](https://github.com/LicenseChain/LicenseChain-Unity-SDK)

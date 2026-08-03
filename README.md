@@ -9,7 +9,7 @@ Official Android SDK for LicenseChain - Secure license management for Android ap
 
 ## 🚀 Features
 
-- **ðŸ” Secure Authentication** - User registration, login, and session management
+- **🔐 Secure Authentication** - User registration, login, and session management
 - **📜 License Management** - Create, validate, update, and revoke licenses
 - **🛡 Hardware ID Validation** - Prevent license sharing and unauthorized access
 - **🔔 Webhook Support** - Real-time license events and notifications
@@ -476,7 +476,7 @@ fun testIntegration() = runTest {
 }
 ```
 
-## ðŸ“ Examples
+## 📝 Examples
 
 See the `examples/` directory for complete examples:
 
@@ -486,7 +486,7 @@ See the `examples/` directory for complete examples:
 - [LICENSE_ASSERTION_JWKS.md](examples/LICENSE_ASSERTION_JWKS.md) — verify + RS256 `license_token` via JWKS
 - [JWKS_ONLY.md](examples/JWKS_ONLY.md) — token + JWKS URI only (`LICENSECHAIN_*` env parity; [JWKS_EXAMPLE_PRIORITY](https://docs.licensechain.app/))
 
-## ðŸ¤ Contributing
+## 🤝 Contributing
 
 We welcome contributions! Please see our [Contributing Guide](CONTRIBUTING.md) for details.
 

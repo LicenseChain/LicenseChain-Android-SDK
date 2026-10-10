@@ -158,3 +158,4 @@ CLAUDE.md
 *.swp
 *.swo
 captures/
+app/build/

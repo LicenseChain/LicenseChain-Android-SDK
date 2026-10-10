@@ -155,3 +155,6 @@ Thumbs.db
 # Local agent / OPSEC
 .claude/
 CLAUDE.md
+*.swp
+*.swo
+captures/

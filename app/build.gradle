@@ -73,8 +73,8 @@ group = 'io.github.licensechain'
 version = '1.0.2'
 
 mavenPublishing {
-    publishToMavenCentral()
-    signAllPublications()
+    // Central + signing enabled via gradle.properties
+    // (mavenCentralPublishing / mavenCentralAutomaticPublishing / signAllPublications)
 
     coordinates('io.github.licensechain', 'licensechain-android-sdk', '1.0.2')
 

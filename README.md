@@ -28,7 +28,7 @@ Add to your `build.gradle` (Module: app):
 
 ```gradle
 dependencies {
-    implementation 'com.licensechain:licensechain-android-sdk:1.0.0'
+    implementation 'io.github.licensechain:licensechain-android-sdk:1.0.2'
 }
 ```
 
@@ -38,9 +38,9 @@ Add to your `pom.xml`:
 
 ```xml
 <dependency>
-    <groupId>com.licensechain</groupId>
+    <groupId>io.github.licensechain</groupId>
     <artifactId>licensechain-android-sdk</artifactId>
-    <version>1.0.0</version>
+    <version>1.0.2</version>
 </dependency>
 ```
 
@@ -52,7 +52,7 @@ Add to your `pom.xml`:
 
 ```gradle
 dependencies {
-    implementation files('libs/licensechain-android-sdk-1.0.0.aar')
+    implementation files('libs/licensechain-android-sdk-1.0.2.aar')
 }
 ```
 

@@ -4,6 +4,8 @@
 [![Android](https://img.shields.io/badge/Android-API%2021+-green.svg)](https://developer.android.com/)
 [![Kotlin](https://img.shields.io/badge/Kotlin-1.8+-purple.svg)](https://kotlinlang.org/)
 [![Gradle](https://img.shields.io/badge/Gradle-7.0+-green.svg)](https://gradle.org/)
+[![Maven Central](https://img.shields.io/maven-central/v/io.github.licensechain/licensechain-android-sdk)](https://repo1.maven.org/maven2/io/github/licensechain/licensechain-android-sdk/)
+[![CI](https://github.com/LicenseChain/LicenseChain-Android-SDK/actions/workflows/ci.yml/badge.svg)](https://github.com/LicenseChain/LicenseChain-Android-SDK/actions/workflows/ci.yml)
 
 Official Android SDK for LicenseChain - Secure license management for Android applications.
 
@@ -517,14 +519,12 @@ This project is licensed under the Elastic License 2.0 (ELv2) — see the [LICEN
 
 **Made with ❤️ for the Android community**
 
-
 ## API Endpoints
 
 Use the canonical API base URL `https://api.licensechain.app/v1`. The Android client also accepts the root host and normalizes requests to the same API version.
 
 ### Base URL
 - **Production**: https://api.licensechain.app/v1\n- **Development**: https://api.licensechain.app/v1\n\n### Available Endpoints\n\n| Method | Endpoint | Description |\n|--------|----------|-------------|\n| GET | /v1/health | Health check |\n| POST | /v1/auth/login | User login |\n| POST | /v1/auth/register | User registration |\n| GET | /v1/apps | List applications |\n| POST | /v1/apps | Create application |\n| GET | /v1/licenses | List licenses |\n| POST | /v1/licenses/verify | Verify license |\n| GET | /v1/webhooks | List webhooks |\n| POST | /v1/webhooks | Create webhook |\n| GET | /v1/analytics | Get analytics |\n\n**Note**: The SDK automatically prepends /v1 to all endpoints, so you only need to specify the path (e.g., /auth/login instead of /v1/auth/login).
-
 
 ## LicenseChain API (v1)
 

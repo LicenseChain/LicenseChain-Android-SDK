@@ -506,7 +506,7 @@ This project is licensed under the Elastic License 2.0 (ELv2) — see the [LICEN
 
 ## 🆘 Support
 
-- **Documentation**: [https://docs.licensechain.app/android](https://docs.licensechain.app/android)
+- **Documentation**: [https://docs.licensechain.app/en/sdk](https://docs.licensechain.app/en/sdk)
 - **Issues**: [GitHub Issues](https://github.com/LicenseChain/LicenseChain-Android-SDK/issues)
 - **Discord**: [LicenseChain Discord](https://discord.gg/licensechain)
 - **Email**: support@licensechain.app
@@ -514,17 +514,11 @@ This project is licensed under the Elastic License 2.0 (ELv2) — see the [LICEN
 ## 🔗 Related Projects
 
 - [LicenseChain iOS SDK](https://github.com/LicenseChain/LicenseChain-iOS-SDK)
+- [LicenseChain Java SDK](https://github.com/LicenseChain/LicenseChain-Java-SDK)
 - [LicenseChain Unity SDK](https://github.com/LicenseChain/LicenseChain-Unity-SDK)
 ---
 
 **Made with ❤️ for the Android community**
-
-## API Endpoints
-
-Use the canonical API base URL `https://api.licensechain.app/v1`. The Android client also accepts the root host and normalizes requests to the same API version.
-
-### Base URL
-- **Production**: https://api.licensechain.app/v1\n- **Development**: https://api.licensechain.app/v1\n\n### Available Endpoints\n\n| Method | Endpoint | Description |\n|--------|----------|-------------|\n| GET | /v1/health | Health check |\n| POST | /v1/auth/login | User login |\n| POST | /v1/auth/register | User registration |\n| GET | /v1/apps | List applications |\n| POST | /v1/apps | Create application |\n| GET | /v1/licenses | List licenses |\n| POST | /v1/licenses/verify | Verify license |\n| GET | /v1/webhooks | List webhooks |\n| POST | /v1/webhooks | Create webhook |\n| GET | /v1/analytics | Get analytics |\n\n**Note**: The SDK automatically prepends /v1 to all endpoints, so you only need to specify the path (e.g., /auth/login instead of /v1/auth/login).
 
 ## LicenseChain API (v1)
 
@@ -540,4 +534,3 @@ This SDK targets the **LicenseChain HTTP API v1** implemented by the LicenseChai
   - PATCH /licenses/:id/activate
   - PATCH /licenses/:id/extend
   - GET /analytics/stats
-

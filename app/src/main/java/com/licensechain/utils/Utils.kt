@@ -214,7 +214,10 @@ object Utils {
     
     fun verifyWebhookSignature(payload: String, signature: String, secret: String): Boolean {
         val expectedSignature = createWebhookSignature(payload, secret)
-        return signature.equals(expectedSignature, ignoreCase = true)
+        val provided = signature.trim().removePrefix("sha256=").lowercase()
+        val expectedBytes = expectedSignature.lowercase().toByteArray(Charsets.UTF_8)
+        val providedBytes = provided.toByteArray(Charsets.UTF_8)
+        return MessageDigest.isEqual(expectedBytes, providedBytes)
     }
     
     fun sha256(data: String): String {

@@ -3,11 +3,16 @@
 ## Current Focus
 
 - Keep default API base usage aligned with `https://api.licensechain.app/v1`.
-- Maintain verify-with-details and JWT/JWKS helper compatibility.
-- Keep Android integration guidance aligned with current Core API contracts.
+- Maintain verify-with-details and JWT/JWKS helper compatibility on Android.
+- Keep Gradle/Kotlin toolchain and integration guidance aligned with Core API contracts.
 
 ## Next Operational Tasks
 
-- Re-run conformance after verify/JWKS payload updates.
-- Keep docs/examples synchronized with SDK and ecosystem docs.
-- Record release-impacting changes in `CHANGELOG.md`.
+- Re-run conformance checks after Core API verify/JWKS contract updates.
+- Keep docs and examples synchronized with https://docs.licensechain.app/en/sdk.
+- Record release-impacting changes in `CHANGELOG.md`; develop experiments on `dev`, release from `main`.
+
+## Ecosystem Notes
+
+- Validate AGP/Kotlin bumps on CI before promoting from `dev` to `main`.
+- Local Linux hosts still need Android SDK platform images / Gradle wrapper for assemble.

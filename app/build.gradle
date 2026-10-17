@@ -6,7 +6,7 @@ plugins {
 
 configurations.configureEach {
     resolutionStrategy.capabilitiesResolution.withCapability('com.google.guava:listenablefuture') {
-        select('com.google.guava:guava:32.1.1-jre')
+        select('com.google.guava:guava:33.7.2-jre')
     }
 }
 

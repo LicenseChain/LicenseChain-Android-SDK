@@ -55,7 +55,7 @@ dependencies {
 
     implementation 'com.google.code.gson:gson:2.10.1'
 
-    implementation 'com.auth0:java-jwt:4.4.0'
+    implementation 'com.auth0:java-jwt:4.6.2'
     implementation 'com.auth0:jwks-rsa:0.24.1'
 
     testImplementation 'junit:junit:4.13.2'

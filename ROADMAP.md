@@ -23,3 +23,4 @@
 
 - Validate AGP/Kotlin bumps on CI before promoting from `dev` to `main`.
 - Local Linux hosts still need Android SDK platform images / Gradle wrapper for assemble.
+- Local assemble requires **JDK 17** (Gradle 8.11 / AGP 8.7 fail on JDK 27 with `Unsupported class file major version 71`).

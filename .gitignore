@@ -159,3 +159,7 @@ CLAUDE.md
 *.swo
 captures/
 app/build/
+
+# Signing
+*.jks
+*.keystore

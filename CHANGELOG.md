@@ -7,6 +7,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [1.0.3] - 2026-10-20
+
 - Fixed webhook signature verification to use constant-time comparison.
 - Bumped Kotlin Gradle plugin to 2.2.21 so CI compiles against AndroidX-pulled kotlin-stdlib 2.2.x.
 
